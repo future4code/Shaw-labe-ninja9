@@ -16,6 +16,7 @@ export default class Home extends React.Component {
         </div>
 
         <div>
+
           <button>Quero ser um ninja</button>
           <button>Quero contratar um ninja</button>
         </div>

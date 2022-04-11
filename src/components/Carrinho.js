@@ -8,7 +8,7 @@ export default class Carrinho extends React.Component {
 
     return (
         <div>
-            <Header/>
+            {/* <Header/> */}
         </div>
     )
 
