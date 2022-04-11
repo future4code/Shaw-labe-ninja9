@@ -8,7 +8,7 @@ export default class PaginadeProdutos extends React.Component {
 
     return (
         <div>
-            <Header/>
+            {/* <Header/> */}
         </div>
     )
 

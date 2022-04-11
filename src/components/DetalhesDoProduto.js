@@ -8,7 +8,7 @@ export default class DetalheDeProduto extends React.Component {
 
     return (
     <div>
-        <Header/>
+        {/* <Header/> */}
     </div>
     )
 

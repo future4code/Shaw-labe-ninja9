@@ -8,7 +8,7 @@ export default class Cadastro extends React.Component {
 
     return (
           <div>
-              <Header/>
+              {/* <Header/> */}
           </div>
     )
 
