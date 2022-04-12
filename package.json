@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "jss": "^10.1.1",
     "react": "^16.13.1",
+    "react-calendar": "^3.7.0",
     "react-dom": "^16.13.1",
     "react-jss": "8.0.0",
     "react-scripts": "^3.4.3",
