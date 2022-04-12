@@ -32,6 +32,7 @@ onchangeinputPreco =()=>{
   render() {
 
     return (
+
       <div>
         <div>
           <header/>
@@ -66,6 +67,9 @@ onchangeinputPreco =()=>{
       
 
       </div>
+
+
+          </div>
 
     )
 

@@ -1,8 +1,9 @@
 import React from 'react'
 import axios from 'axios';
 import styled from "styled-components"
-import Header from './Header'
-import Cadastro from './components/Cadastro';
+
+import Header from './components/Header';
+
 
 
 export default class App extends React.Component {
@@ -10,7 +11,7 @@ export default class App extends React.Component {
 
     return (
           <div>
-            LabeNinjas
+            <Header />
           </div>
     )
 
