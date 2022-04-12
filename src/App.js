@@ -47,12 +47,10 @@ export default class App extends React.Component {
 
 
   mostrarTela = () => {
-    switch (this.state.telaAtual){
+    switch (this.state.telaAtual) {
 
+      case "home":
         return <Home irParaCadastro={this.irParaCadastro} irParaProdutos={this.irParaProdutos} />;
-
-        return <Home />;
-
       case "carrinho":
         return <Carrinho />;
       case "cadastro":
@@ -62,27 +60,25 @@ export default class App extends React.Component {
       case "detalhes":
         return <DetalhesDoProduto irParaDetalhes={this.irParaDetalhes} />;
       default:
-
-        return <Home irParaHome={this.irParaHome}  />;
-
-        return <Home />;
-
+        return <Home irParaCadastro={this.irParaCadastro} irParaProdutos={this.irParaProdutos} />;
     }
   };
-  
+
   render() {
 
     return (
-          <div>
-            <Header
-              irParaCarrinho={this.irParaCarrinho}
-              irParaHome={this.irParaHome}
-             />
-            {this.mostrarTela()}
-          </div>
-    )
+      <div>
+        
+        <Header
+          irParaCarrinho={this.irParaCarrinho}
+          irParaHome={this.irParaHome}
+        />
 
+        {this.mostrarTela()}
+
+      </div>
+    )
   }
 }
 
- 
+
