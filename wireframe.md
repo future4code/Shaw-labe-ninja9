@@ -1,0 +1,2 @@
+ A base do layout esta sendo criada da maneira que esta demostrada no PDF, o mesmo segue a paleta de cores do logon que são tonalidades de Lilas e roxo, os botões de todas as paginas serão padronizados. O projeto conta com a pagina de Home, cadastro, Detalhes dos produtos e carinho. Caso haja alguma alteração ou sugestão nos avise.
+ 
