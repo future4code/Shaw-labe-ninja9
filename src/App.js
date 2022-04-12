@@ -1,9 +1,17 @@
+
 import React from 'react'
 import axios from 'axios';
 import styled from "styled-components"
 import Header from './components/Header';
 import Home from './components/Home';
 import Carrinho from './components/Carrinho';
+
+import PaginaDeProdutos from "./components/PaginaDeProdutos"
+import DetalhesDoProduto from "./components/DetalhesDoProduto"
+import Cadastro from './components/Cadastro';
+
+
+
 
 
 
@@ -40,8 +48,11 @@ export default class App extends React.Component {
 
   mostrarTela = () => {
     switch (this.state.telaAtual){
-      case "home":
+
+        return <Home irParaCadastro={this.irParaCadastro} irParaProdutos={this.irParaProdutos} />;
+
         return <Home />;
+
       case "carrinho":
         return <Carrinho />;
       case "cadastro":
@@ -51,7 +62,11 @@ export default class App extends React.Component {
       case "detalhes":
         return <DetalhesDoProduto irParaDetalhes={this.irParaDetalhes} />;
       default:
+
+        return <Home irParaHome={this.irParaHome}  />;
+
         return <Home />;
+
     }
   };
   
