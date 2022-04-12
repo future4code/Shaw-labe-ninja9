@@ -17,11 +17,20 @@ justify-content: center;
 export default class Home extends React.Component {
 
 
+
+
+
   render() {
 
     return (
       <div>
+
            <ContainerHome>
+
+        {/* <Header /> */}
+
+        <div>
+
           <h1>LabeNinjas</h1>
           <p>O talento certo no momento certo</p>
         </ContainerHome>
