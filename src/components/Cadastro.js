@@ -69,7 +69,7 @@ onchangeinputPreco =()=>{
       </div>
 
 
-          </div>
+         
 
     )
 
