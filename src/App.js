@@ -17,11 +17,13 @@ import Cadastro from './components/Cadastro';
 
 export default class App extends React.Component {
   state = {
-    telaAtual: "home"
+    // telaAtual: "home",
+    telaAtual: "produtos",
+    produtoId: ""
   }
 
   mudarTela = (nomeTela) => {
-    this.setState({ telaAtual: nomeTela })
+    this.setState({ telaAtual: nomeTela, produtoId: "" })
   };
 
   irParaHome = () => {
@@ -36,8 +38,9 @@ export default class App extends React.Component {
     this.mudarTela("cadastro")
   };
 
-  irParaDetalhes = () => {
-    this.mudarTela("detalhes")
+  irParaDetalhes = (id) => {
+    // this.mudarTela("detalhes")
+    this.setState({telaAtual: "detalhes", produtoId: id})
   };
 
   irParaProdutos = () => {
@@ -56,9 +59,9 @@ export default class App extends React.Component {
       case "cadastro":
         return <Cadastro irParaCadastro={this.irParaCadastro} />;
       case "produtos":
-        return <PaginaDeProdutos irParaProdutos={this.irParaProdutos} />;
+        return <PaginaDeProdutos irParaProdutos={this.irParaProdutos} irParaDetalhes={this.irParaDetalhes}/>;
       case "detalhes":
-        return <DetalhesDoProduto irParaDetalhes={this.irParaDetalhes} />;
+        return <DetalhesDoProduto irParaProdutos={this.irParaProdutos} id={this.state.produtoId} />;
       default:
         return <Home irParaCadastro={this.irParaCadastro} irParaProdutos={this.irParaProdutos} />;
     }

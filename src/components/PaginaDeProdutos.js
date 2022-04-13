@@ -48,21 +48,24 @@ export default class PaginadeProdutos extends React.Component {
         servicos: res.data.jobs
       })
     })
-    .catch((err) => console.log(err.response))
+    .catch((err) => alert(err.response))
   }
 
   render() {
-    console.log(this.state.servicos)
 
     const listaDeServicos = this.state.servicos.map((servico) => {
+
+      const data = `${servico.dueDate.slice(8,10)}/${servico.dueDate.slice(5,7)}/${servico.dueDate.slice(0,4)}`
+
       return (
-        <ContainerCard>
-          <h3 key={servico.id}>{servico.title}</h3>
+        <ContainerCard key={servico.id}>
+          <h3>{servico.title}</h3>
           <p>Preço: {servico.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-          <p>Prazo: {servico.dueDate}</p>
+          {/* <p>{servico.price}</p> */}
+          <p>Prazo: {data}</p>
 
           <div>
-            <button>Detalhes</button>
+            <button onClick={() => this.props.irParaDetalhes(servico.id)}>Detalhes</button>
             <button>Adicionar ao carrinho </button>
           </div>
         </ContainerCard>
