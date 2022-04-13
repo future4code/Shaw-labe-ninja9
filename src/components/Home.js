@@ -16,30 +16,22 @@ justify-content: center;
 `
 export default class Home extends React.Component {
 
-
-
-
-
   render() {
 
     return (
       <div>
 
-           <ContainerHome>
-
-        {/* <Header /> */}
-
-        <div>
-
-          <h1>LabeNinjas</h1>
-          <p>O talento certo no momento certo</p>
+        <ContainerHome>
+            <h1>LabeNinjas</h1>
+            <p>O talento certo no momento certo</p>
         </ContainerHome>
+
         <ButtonCadastro>
           <button onClick={this.props.irParaCadastro}>Quero ser um ninja</button>
           <button onClick={this.props.irParaProdutos}>Quero contratar um ninja</button>
         </ButtonCadastro>
+
       </div>
     )
-
   }
 }
