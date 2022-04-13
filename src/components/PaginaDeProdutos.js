@@ -66,7 +66,7 @@ export default class PaginadeProdutos extends React.Component {
 
           <div>
             <button onClick={() => this.props.irParaDetalhes(servico.id)}>Detalhes</button>
-            <button>Adicionar ao carrinho </button>
+            <button onClick={() => this.props.adicionarAoCarrinho(servico)}>Adicionar ao carrinho </button>
           </div>
         </ContainerCard>
       )
