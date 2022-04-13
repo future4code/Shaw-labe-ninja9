@@ -24,6 +24,7 @@ export default class App extends React.Component {
   }
 
   adicionarAoCarrinho = (servico) => {
+    alert('Produto adicionado ao carrinho')
     const copiaDoCarrinho = this.state.carrinho
     this.setState({ carrinho: [...copiaDoCarrinho, servico] })
   };
@@ -79,7 +80,7 @@ export default class App extends React.Component {
       case "produtos":
         return <PaginaDeProdutos adicionarAoCarrinho={this.adicionarAoCarrinho} irParaProdutos={this.irParaProdutos} irParaDetalhes={this.irParaDetalhes}/>;
       case "detalhes":
-        return <DetalhesDoProduto irParaProdutos={this.irParaProdutos} id={this.state.produtoId} />;
+        return <DetalhesDoProduto adicionarAoCarrinho={this.adicionarAoCarrinho} irParaProdutos={this.irParaProdutos} id={this.state.produtoId} />;
       default:
         return <Home irParaCadastro={this.irParaCadastro} irParaProdutos={this.irParaProdutos} />;
     }
