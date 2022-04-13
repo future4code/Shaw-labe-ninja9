@@ -81,7 +81,6 @@ export default class PaginadeProdutos extends React.Component {
         <ContainerCard key={servico.id}>
           <h3>{servico.title}</h3>
           <p>Preço: {servico.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-          {/* <p>{servico.price}</p> */}
           <p>Prazo: {data}</p>
 
           <div>
