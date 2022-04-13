@@ -51,7 +51,6 @@ export default class App extends React.Component {
 
       case "home":
         return <Home irParaCadastro={this.irParaCadastro} irParaProdutos={this.irParaProdutos} />;
-
       case "carrinho":
         return <Carrinho />;
       case "cadastro":
@@ -61,9 +60,7 @@ export default class App extends React.Component {
       case "detalhes":
         return <DetalhesDoProduto irParaDetalhes={this.irParaDetalhes} />;
       default:
-
-        return <Home irParaHome={this.irParaHome} />;
-
+        return <Home irParaCadastro={this.irParaCadastro} irParaProdutos={this.irParaProdutos} />;
     }
   };
 
@@ -71,14 +68,16 @@ export default class App extends React.Component {
 
     return (
       <div>
+        
         <Header
           irParaCarrinho={this.irParaCarrinho}
           irParaHome={this.irParaHome}
         />
+
         {this.mostrarTela()}
+
       </div>
     )
-
   }
 }
 
