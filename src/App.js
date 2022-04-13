@@ -17,8 +17,28 @@ import Cadastro from './components/Cadastro';
 
 export default class App extends React.Component {
   state = {
+
     telaAtual: "home",
-    produtoId: ""
+    produtoId: "",
+    carrinho: [],
+  }
+
+  adicionarAoCarrinho = (servico) => {
+    const copiaDoCarrinho = this.state.carrinho
+    this.setState({ carrinho: [...copiaDoCarrinho, servico] })
+  };
+
+  removerDoCarrinho = (servicoIndex) => {
+    if(window.confirm('Tem certeza que deseja remover o item?')){
+      const copiaDoCarrinho = this.state.carrinho
+      copiaDoCarrinho.splice(servicoIndex, 1)
+      this.setState({ carrinho: copiaDoCarrinho })
+    }
+  };
+
+  finalizarCompra = () => {
+    alert('Obrigado por comprar com a gente!')
+    this.setState({ carrinho: [] })
   }
 
   mudarTela = (nomeTela) => {
@@ -53,11 +73,11 @@ export default class App extends React.Component {
       case "home":
         return <Home irParaCadastro={this.irParaCadastro} irParaProdutos={this.irParaProdutos} />;
       case "carrinho":
-        return <Carrinho />;
+        return <Carrinho finalizarCompra={this.finalizarCompra} irParaProdutos={this.irParaProdutos} removerDoCarrinho={this.removerDoCarrinho} carrinho={this.state.carrinho} />;
       case "cadastro":
         return <Cadastro irParaCadastro={this.irParaCadastro} />;
       case "produtos":
-        return <PaginaDeProdutos irParaProdutos={this.irParaProdutos} irParaDetalhes={this.irParaDetalhes}/>;
+        return <PaginaDeProdutos adicionarAoCarrinho={this.adicionarAoCarrinho} irParaProdutos={this.irParaProdutos} irParaDetalhes={this.irParaDetalhes}/>;
       case "detalhes":
         return <DetalhesDoProduto irParaProdutos={this.irParaProdutos} id={this.state.produtoId} />;
       default:
