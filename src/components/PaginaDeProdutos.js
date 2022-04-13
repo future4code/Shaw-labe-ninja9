@@ -33,10 +33,11 @@ const ContainerCard = styled.div`
 export default class PaginadeProdutos extends React.Component {
 
   state = {
-    servicos: []
+    servicos: [],
+    ordenacao:""
   }
 
-  componentDidMount() {
+ componentDidMount() {
     this.mostrarTodosOsServicos()
   }
 
@@ -51,9 +52,28 @@ export default class PaginadeProdutos extends React.Component {
     .catch((err) => alert(err.response))
   }
 
-  render() {
+  atualizaOrdenacao =(e)=>{
+    this.setState({ordenacao: e.target.value})
+  }
 
-    const listaDeServicos = this.state.servicos.map((servico) => {
+  render() {
+    const listaDeServicos = this.state.servicos
+    .sort((a, b) => {
+        switch (this.state.ordenacao) {
+          case 'menor_valor':            
+            return a.price - b.price;
+            case 'maior_valor':            
+            return b.price - a.price;
+            case 'titulo':            
+            return a.title.toUpperCase() > b.title.toUpperCase() ? 1 : -1;
+            case 'prazo':
+              return new Date(a.dueDate).getTime() >  new Date(b.dueDate).getTime()
+                                  ? 1: -1;
+          default:
+            break;
+        }
+  })
+    .map((servico) => {
 
       const data = `${servico.dueDate.slice(8,10)}/${servico.dueDate.slice(5,7)}/${servico.dueDate.slice(0,4)}`
 
@@ -61,7 +81,6 @@ export default class PaginadeProdutos extends React.Component {
         <ContainerCard key={servico.id}>
           <h3>{servico.title}</h3>
           <p>Preço: {servico.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-          {/* <p>{servico.price}</p> */}
           <p>Prazo: {data}</p>
 
           <div>
@@ -88,12 +107,13 @@ export default class PaginadeProdutos extends React.Component {
             placeholder='Buscar por titulo ou descrição'
             type='text'
           />
-          <select name="Sem ordenação">
-            <option value="valor1">Sem ordenação</option>
-            <option value="valor2">Menor Valor</option>
-            <option value="valor3" >Maior Valor</option>
-            <option value="valor4">Titulo</option>
-            <option value="valor5">Prazo</option>
+          <select value={this.state.ordenacao}
+            onChange ={this.atualizaOrdenacao}>
+            <option value="*">Sem ordenação</option>
+            <option value="menor_valor">Menor Valor</option>
+            <option value="maior_valor" >Maior Valor</option>
+            <option value="titulo">Titulo</option>
+            <option value="prazo">Prazo</option>
           </select>
         </ContainerFiltros>
 

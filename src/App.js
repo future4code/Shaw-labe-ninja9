@@ -17,8 +17,8 @@ import Cadastro from './components/Cadastro';
 
 export default class App extends React.Component {
   state = {
-    // telaAtual: "home",
-    telaAtual: "produtos",
+
+    telaAtual: "home",
     produtoId: "",
     carrinho: [],
   }
@@ -58,7 +58,6 @@ export default class App extends React.Component {
   };
 
   irParaDetalhes = (id) => {
-    // this.mudarTela("detalhes")
     this.setState({telaAtual: "detalhes", produtoId: id})
   };
 
