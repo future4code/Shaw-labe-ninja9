@@ -80,7 +80,7 @@ export default class DetalheDeProduto extends React.Component {
 
         <div>
           <button onClick={this.props.irParaProdutos}>Encontrar outro ninja</button>
-          <button>Adicionar ao carrinho</button>
+          <button>Adicionar ao carrinho </button>
         </div>
       </ContainerServico>
 
