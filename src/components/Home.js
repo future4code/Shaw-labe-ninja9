@@ -4,34 +4,74 @@ import styled from "styled-components"
 import Header from './Header'
 import Cadastro from "./Cadastro"
 import PaginaDeProdutos from "./PaginaDeProdutos"
+import img from "./img.png"
+
+const AllHome = styled.div`
+background-color: #F5F4FC;
+height: 85vh;
+width: 99vw;
+`
 
 const ContainerHome = styled.div`
 display: flex;
 align-items: center;
 flex-direction: column;
+background-color: #F5F4FC;
+
 `
 const ButtonCadastro = styled.div`
 display: flex;
 justify-content: center;
 `
+
+const Buttons  = styled.button`
+  &:hover {
+    background: #7165bf;
+    color:white;
+  }
+margin:10px;
+margin-left: 40px;
+margin-right: 40px;
+padding: 10px;
+background: #F5F4FC;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: bold;
+font-size: 18px;
+line-height: 18px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #9F96D9;
+border: solid #9F96D9 2px ;
+cursor: pointer;
+border-radius: 12px;
+
+`
+
+
+
+const ImgHome = styled.img`
+   text-align: center;
+max-height: 400px;
+`
+
 export default class Home extends React.Component {
 
   render() {
 
     return (
-      <div>
-
+      <AllHome>
+    
         <ContainerHome>
-          <h1>LabeNinjas</h1>
-          <p>O talento certo no momento certo</p>
+        < ImgHome src={img} />
         </ContainerHome>
 
         <ButtonCadastro>
-          <button onClick={this.props.irParaCadastro}>Quero ser um ninja</button>
-          <button onClick={this.props.irParaProdutos}>Quero contratar um ninja</button>
+          <Buttons onClick={this.props.irParaCadastro}>Quero ser um ninja</Buttons>
+          <Buttons onClick={this.props.irParaProdutos}>Quero contratar um ninja</Buttons>
         </ButtonCadastro>
 
-      </div>
+      </AllHome>
     )
   }
 }
