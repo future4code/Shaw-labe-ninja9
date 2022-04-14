@@ -5,11 +5,36 @@ import Home from "./Home";
 import Carrinho from "./Carrinho";
 
 const CardServico = styled.div`
-  border: 1px solid black;
   display: flex;
-  background-color: grey;
+  background-color: #B3ADD9;
   justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
 `;
+
+const TodosBotoes = styled.button`
+  border: 1px solid #9f96d9;
+  background-color: ${props => props.botaoPrincipal ? '#9f96d9' : 'white'};
+  /* color: #B3ADD9; */color: ${props => props.botaoPrincipal ? 'white' : '#B3ADD9'};
+  border-radius: 5px;
+  padding: 5px;
+  margin: 15px;
+  &:hover{
+    background-color: #7165bf;
+    color: white;
+  }
+`
+
+const ContainerPrincipal = styled.div`
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+`
+
+const Finalizacao = styled.div`
+  display: flex;
+`
 
 export default class Header extends React.Component {
   calcularTotal = () => {
@@ -22,17 +47,17 @@ export default class Header extends React.Component {
   mostrarLista = () => {
     return this.props.carrinho.map((servico, index) => (
       <CardServico key={servico.id}>
-        <h3>{servico.title}</h3>
-        <p>
+        <p><b>{servico.title}</b></p>
+        <p><b>
           Preço:{" "}
           {servico.price.toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL",
           })}
-        </p>
-        <button onClick={() => this.props.removerDoCarrinho(index)}>
+        </b></p>
+        <TodosBotoes onClick={() => this.props.removerDoCarrinho(index)} style={{cursor:'pointer'}}>
           Remover
-        </button>
+        </TodosBotoes>
       </CardServico>
     ));
   };
@@ -44,22 +69,25 @@ export default class Header extends React.Component {
       this.props.carrinho.length <= 0 ? (
         <h2>Carrinho Vazio</h2>
       ) : (
-        <div>
+        <ContainerPrincipal>
+          <h2>Carrinho</h2>
           {this.mostrarLista()}
-          <div>
-            Total:{" "}
-            {total.toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            })}
-            <button onClick={this.props.finalizarCompra}>
+          <Finalizacao>
+            <h2>
+              Total:{" "}
+              {total.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </h2>
+            <TodosBotoes botaoPrincipal={true} onClick={this.props.finalizarCompra} style={{cursor:'pointer'}}>
               Finalizar Compra
-            </button>
-            <button onClick={this.props.irParaProdutos}>
+            </TodosBotoes>
+            <TodosBotoes onClick={this.props.irParaProdutos} style={{cursor:'pointer'}}>
               Voltar Para Lista
-            </button>
-          </div>
-        </div>
+            </TodosBotoes>
+          </Finalizacao>
+        </ContainerPrincipal>
       );
 
     return <div>{telaCarrinho}</div>;
