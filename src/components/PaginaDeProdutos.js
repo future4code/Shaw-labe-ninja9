@@ -7,6 +7,7 @@ import PaginaDeProdutos from "./PaginaDeProdutos"
 
 
 
+
 const ContainerPrincipal = styled.div`
   display: flex;
 `
@@ -15,8 +16,10 @@ const ContainerFiltros = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 10px;
-  border: 1px solid black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border: none;
+  color: #7265BF;
+  
 `
 
 const ContainerProdutos = styled.div`
@@ -33,10 +36,44 @@ const ContainerCard = styled.div`
 const GrupoDeFiltros = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100%;
+  max-width: 100%;
   padding: 10px;
-  border: 1px solid black;
+  background: #7265BF;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #7265BF;
 `
+const Order = styled.select`
+margin-top: 12px;
+display: flex;
+background: #FFFFFF;
+border-radius: 10px;
+margin: 10px;
+height: 25px;
+text-align: center;
+color:  #7265BF;
+max-width: 100%;
+`
+
+const Filter = styled.input`
+background: #FFFFFF;
+border-radius: 10px;
+margin: 10px;
+height: 23px;
+text-align: center;
+border: #7265BF;
+color: #7265BF;
+max-width: 100%;
+display: flex;
+`
+
+const Title = styled.h2`
+text-align: center;
+color: #F5F4FC;
+max-width: 100%;
+`
+
+
 
 
 export default class PaginadeProdutos extends React.Component {
@@ -147,39 +184,35 @@ export default class PaginadeProdutos extends React.Component {
 
         <ContainerFiltros>
           <GrupoDeFiltros>
-            <h2>Filtros</h2>
-            <div>
-              Filtro Mínimo:
-              <input type={"number"}
+            <Title>FILTROS</Title>
+
+            <Filter type={"text"}
+              placeholder="Busca por nome"
+                value={this.state.filtroBuscaPorNome}
+                onChange={this.manipularValorDoFiltroBuscaPorNome}
+              />        
+             
+              <Filter type={"number"}
+              placeholder=" Valor Mínimo"
                 value={this.state.filtroMinimo}
                 onChange={this.manipularValorDoFiltroMinimo}
               />
-            </div>
-
-            <div>
-              Filtro Máximo:
-              <input type={"number"}
+          
+              <Filter type={"number"}
+              placeholder="Valor Máximo"
                 value={this.state.filtroMaximo}
                 onChange={this.manipularValorDoFiltroMaximo}
               />
-            </div>
-
-            <div>
-              Busca por nome:
-              <input type={"text"}
-                value={this.state.filtroBuscaPorNome}
-                onChange={this.manipularValorDoFiltroBuscaPorNome}
-              />
-            </div>
-
-            <select value={this.state.ordenacao}
+       
+            
+            <Order value={this.state.ordenacao}
               onChange={this.atualizaOrdenacao}>
               <option value="*">Sem ordenação</option>
               <option value="menor_valor">Menor Valor</option>
               <option value="maior_valor" >Maior Valor</option>
               <option value="titulo">Titulo</option>
               <option value="prazo">Prazo</option>
-            </select>
+            </Order>
           </GrupoDeFiltros>
 
         </ContainerFiltros>
