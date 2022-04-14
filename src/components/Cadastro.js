@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { headers } from "../constants/variaveisApi";
 import { urlBase } from "../constants/variaveisApi";
 
-const ContainerInputs = styled.div`
+const ContainerInputs = styled.div `
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,9 +122,6 @@ export default class Cadastro extends React.Component {
           />
           <button onClick={this.criarCadastros}>Cadastrar</button>
         </ContainerInputs>
-
-
-
         <div></div>
       </div>
     );
