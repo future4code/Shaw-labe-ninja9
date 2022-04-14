@@ -1,19 +1,12 @@
-
 import React from 'react'
 import axios from 'axios';
 import styled from "styled-components"
 import Header from './components/Header';
 import Home from './components/Home';
 import Carrinho from './components/Carrinho';
-
 import PaginaDeProdutos from "./components/PaginaDeProdutos"
 import DetalhesDoProduto from "./components/DetalhesDoProduto"
 import Cadastro from './components/Cadastro';
-
-
-
-
-
 
 export default class App extends React.Component {
   state = {
@@ -30,7 +23,7 @@ export default class App extends React.Component {
   };
 
   removerDoCarrinho = (servicoIndex) => {
-    if(window.confirm('Tem certeza que deseja remover o item?')){
+    if (window.confirm('Tem certeza que deseja remover o item?')) {
       const copiaDoCarrinho = this.state.carrinho
       copiaDoCarrinho.splice(servicoIndex, 1)
       this.setState({ carrinho: copiaDoCarrinho })
@@ -59,7 +52,7 @@ export default class App extends React.Component {
   };
 
   irParaDetalhes = (id) => {
-    this.setState({telaAtual: "detalhes", produtoId: id})
+    this.setState({ telaAtual: "detalhes", produtoId: id })
   };
 
   irParaProdutos = () => {
@@ -78,7 +71,7 @@ export default class App extends React.Component {
       case "cadastro":
         return <Cadastro irParaCadastro={this.irParaCadastro} />;
       case "produtos":
-        return <PaginaDeProdutos adicionarAoCarrinho={this.adicionarAoCarrinho} irParaProdutos={this.irParaProdutos} irParaDetalhes={this.irParaDetalhes}/>;
+        return <PaginaDeProdutos adicionarAoCarrinho={this.adicionarAoCarrinho} irParaProdutos={this.irParaProdutos} irParaDetalhes={this.irParaDetalhes} />;
       case "detalhes":
         return <DetalhesDoProduto adicionarAoCarrinho={this.adicionarAoCarrinho} irParaProdutos={this.irParaProdutos} id={this.state.produtoId} />;
       default:
@@ -90,7 +83,7 @@ export default class App extends React.Component {
 
     return (
       <div>
-        
+
         <Header
           irParaCarrinho={this.irParaCarrinho}
           irParaHome={this.irParaHome}
@@ -102,5 +95,4 @@ export default class App extends React.Component {
     )
   }
 }
-
 

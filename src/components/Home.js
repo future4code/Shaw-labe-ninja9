@@ -22,8 +22,8 @@ export default class Home extends React.Component {
       <div>
 
         <ContainerHome>
-            <h1>LabeNinjas</h1>
-            <p>O talento certo no momento certo</p>
+          <h1>LabeNinjas</h1>
+          <p>O talento certo no momento certo</p>
         </ContainerHome>
 
         <ButtonCadastro>

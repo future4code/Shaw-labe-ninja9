@@ -34,14 +34,14 @@ export default class DetalheDeProduto extends React.Component {
 
   mostraDetalhesDoServico = () => {
     axios
-    .get(`${urlBase}/jobs/${this.props.id}`, headers)
-    .then((res) => {
-      this.setState({
-        detalhes: [res.data],
-        metodosDePagamento: res.data.paymentMethods
+      .get(`${urlBase}/jobs/${this.props.id}`, headers)
+      .then((res) => {
+        this.setState({
+          detalhes: [res.data],
+          metodosDePagamento: res.data.paymentMethods
+        })
       })
-    })
-    .catch((err) => alert(err.response))
+      .catch((err) => alert(err.response))
   }
 
   render() {
@@ -54,8 +54,8 @@ export default class DetalheDeProduto extends React.Component {
         )
       })
 
-      const preco = detalhe.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL' })
-      const data = `${detalhe.dueDate.slice(8,10)}/${detalhe.dueDate.slice(5,7)}/${detalhe.dueDate.slice(0,4)}`
+      const preco = detalhe.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+      const data = `${detalhe.dueDate.slice(8, 10)}/${detalhe.dueDate.slice(5, 7)}/${detalhe.dueDate.slice(0, 4)}`
 
       return (
         <ContainerDetalhes key={detalhe.id}>
@@ -75,9 +75,9 @@ export default class DetalheDeProduto extends React.Component {
 
     return (
 
-    <ContainerPagina>
-      {Detalhes}
-    </ContainerPagina>
+      <ContainerPagina>
+        {Detalhes}
+      </ContainerPagina>
     )
 
   }
