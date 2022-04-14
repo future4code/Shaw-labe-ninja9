@@ -8,21 +8,58 @@ const ContainerInputs = styled.div `
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color:  #E9E5FF;
+  width:50%;
+  margin:0 auto;
+  box-shadow: 0 4px 9px 0 #9F96D9, 0 5px 10px 0 rgb(0 0 0 / 19%);
+  border-radius: 16px;
+  padding: 16px;
+  margin-top:10px;
+
   input {
-    margin-top: 5px;
-    height: 2em;
-    width: 25%;
+    margin-top: 5px;    
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin: 10px;
+    height: 23px;
+    text-align: center;
+    border: #7265BF;
+    color: #7265BF;
+    width: 100%;
+    display: flex;
   }
+
   select {
     margin-top: 5px;
-    width: 25%;
+    width: 100%;
   }
+
   button {
-    height: 2em;
-    width: 25%;
-    margin-top:50px;
-  }
-`
+    &:hover {
+      background: #7165bf;
+      color:white;
+    }
+  margin:10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 10px;
+  background: #F5F4FC;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #9F96D9;
+  border: solid #9F96D9 2px ;
+  cursor: pointer;
+  border-radius: 12px;
+  
+  `
+  
+
+//background-color: #E9E5FF;
   ;
 
 export default class Cadastro extends React.Component {
@@ -80,10 +117,8 @@ export default class Cadastro extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <header />
-        </div>
+     
+        
         <ContainerInputs>
           <h1>Cadastre seu Serviço</h1>
           <input
@@ -122,8 +157,7 @@ export default class Cadastro extends React.Component {
           />
           <button onClick={this.criarCadastros}>Cadastrar</button>
         </ContainerInputs>
-        <div></div>
-      </div>
+        
     );
   }
 }
