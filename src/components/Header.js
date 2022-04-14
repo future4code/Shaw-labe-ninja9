@@ -21,15 +21,15 @@ export default class Header extends React.Component {
   render() {
 
     return (
-        <MainContainer>
-          <Cabecalho>
-            Nome do Projeto
-          </Cabecalho>
-          <Cabecalho>
-            <button onClick={this.props.irParaHome}>Home</button>
-            <button onClick={this.props.irParaCarrinho}>Carrinho</button>
-          </Cabecalho>
-        </MainContainer>
+      <MainContainer>
+        <Cabecalho>
+          Nome do Projeto
+        </Cabecalho>
+        <Cabecalho>
+          <button onClick={this.props.irParaHome}>Home</button>
+          <button onClick={this.props.irParaCarrinho}>Carrinho</button>
+        </Cabecalho>
+      </MainContainer>
     )
 
   }
