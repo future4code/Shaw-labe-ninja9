@@ -23,7 +23,7 @@ $ cd Shaw-labe-ninjas9
 Rodrigo Pernambuco https://github.com/RodrigoPernambuco
 
 
-Matheus do Santos https://github.com/MatheusJesuino
+Matheus Jesuino https://github.com/MatheusJesuino
 
 
 Rodrigo Goularte https://github.com/rodrigoularte
