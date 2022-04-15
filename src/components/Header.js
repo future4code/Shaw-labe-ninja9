@@ -1,15 +1,12 @@
 import React from 'react'
-import axios from 'axios'
 import styled from "styled-components"
-import Home from './Home'
-import Carrinho from './Carrinho'
 
 const MainContainer = styled.div`
   background-color: #7165bf;
   color: white;
   display: flex;
   justify-content: space-between;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 `
 
 const AreaDosBotoes = styled.div`

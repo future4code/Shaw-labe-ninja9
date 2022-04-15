@@ -70,6 +70,21 @@ const Botao = styled.button`
   :hover {
     cursor: pointer;
     background-color: #9F96D9;
+    background-color: #7165BF;
+    color: #FFFFFF;
+  }
+`
+const BotaoCarrinho = styled.button`
+  background-color: #9F96D9;
+  height: 40px;
+  width: 200px;
+  border: 1px solid #9F96D9;
+  color: #FFFFFF;
+  border-radius: 5px;
+  font-size: 1.1em;
+  :hover {
+    cursor: pointer;
+    background-color: #7265BF;
     color: #FFFFFF;
   }
 `
@@ -154,7 +169,7 @@ export default class DetalheDeProduto extends React.Component {
 
           <ContainerBotoes>
             <Botao onClick={this.props.irParaProdutos}>Encontrar outro ninja</Botao>
-            <Botao onClick={() => this.props.adicionarAoCarrinho(detalhe)}>Adicionar ao carrinho </Botao>
+            <BotaoCarrinho onClick={() => this.props.adicionarAoCarrinho(detalhe)}>Adicionar ao carrinho </BotaoCarrinho>
           </ContainerBotoes>
         </ContainerDetalhes>
       )

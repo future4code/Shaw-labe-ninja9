@@ -72,10 +72,23 @@ const Botao = styled.button`
   :hover {
     cursor: pointer;
     background-color: #9F96D9;
+    background-color: #7165BF;
     color: #FFFFFF;
   }
 `
-
+const BotaoCarrinho = styled.button`
+  background-color: #9F96D9;
+  height: 30px;
+  width: 140px;
+  border: 1px solid #9F96D9;
+  color: #FFFFFF;
+  border-radius: 5px;
+  :hover {
+    cursor: pointer;
+    background-color: #7265BF;
+    color: #FFFFFF;
+  }
+`
 
 const GrupoDeFiltros = styled.div`
   display: flex;
@@ -220,7 +233,7 @@ export default class PaginadeProdutos extends React.Component {
 
             <ContainerBotoes>
               <Botao onClick={() => this.props.irParaDetalhes(servico.id)}>Detalhes</Botao>
-              <Botao onClick={() => this.props.adicionarAoCarrinho(servico)}>Adicionar ao carrinho </Botao>
+              <BotaoCarrinho onClick={() => this.props.adicionarAoCarrinho(servico)}>Adicionar ao carrinho </BotaoCarrinho>
             </ContainerBotoes>
           </ContainerCard>
 

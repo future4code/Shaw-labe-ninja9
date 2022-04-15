@@ -15,6 +15,7 @@ const ContainerInputs = styled.div `
   border-radius: 16px;
   padding: 16px;
   margin-top:10px;
+  font-family: 'Montserrat', sans-serif;
 
   input {
     margin-top: 5px;    
@@ -44,7 +45,6 @@ const ContainerInputs = styled.div `
   margin-right: 40px;
   padding: 10px;
   background: #F5F4FC;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: bold;
   font-size: 18px;
   line-height: 18px;
@@ -55,7 +55,7 @@ const ContainerInputs = styled.div `
   border: solid #9F96D9 2px ;
   cursor: pointer;
   border-radius: 12px;
-  
+  }
   `
   
 
