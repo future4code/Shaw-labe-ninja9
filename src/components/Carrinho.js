@@ -1,8 +1,5 @@
 import React from "react";
-import axios from "axios";
 import styled from "styled-components";
-import Home from "./Home";
-import Carrinho from "./Carrinho";
 
 const CardServico = styled.div`
   display: flex;
@@ -29,7 +26,7 @@ const TodosBotoes = styled.button`
 `
 
 const ContainerPrincipal = styled.div`
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 `
 
 const Finalizacao = styled.div`

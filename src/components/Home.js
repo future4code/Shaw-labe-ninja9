@@ -1,9 +1,5 @@
 import React from 'react'
-import axios from 'axios'
 import styled from "styled-components"
-import Header from './Header'
-import Cadastro from "./Cadastro"
-import PaginaDeProdutos from "./PaginaDeProdutos"
 import img from "./img.png"
 
 const AllHome = styled.div`
@@ -34,7 +30,7 @@ margin-left: 40px;
 margin-right: 40px;
 padding: 10px;
 background: #F5F4FC;
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-family: 'Montserrat', sans-serif;
 font-weight: bold;
 font-size: 18px;
 line-height: 18px;

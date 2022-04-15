@@ -1,6 +1,4 @@
 import React from 'react'
-import axios from 'axios';
-import styled from "styled-components"
 import Header from './components/Header';
 import Home from './components/Home';
 import Carrinho from './components/Carrinho';
@@ -11,7 +9,7 @@ import Cadastro from './components/Cadastro';
 export default class App extends React.Component {
   state = {
 
-    telaAtual: "produtos",
+    telaAtual: "home",
     produtoId: "",
     carrinho: [],
   }
