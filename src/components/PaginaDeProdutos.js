@@ -2,6 +2,8 @@ import React from 'react'
 import styled from "styled-components"
 import axios from 'axios';
 import Header from './Header'
+import Cadastro from "./Cadastro"
+import PaginaDeProdutos from "./PaginaDeProdutos"
 
 const InputContainer = styled.div`
 padding: 10px;

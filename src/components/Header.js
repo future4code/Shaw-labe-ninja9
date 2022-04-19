@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import styled from "styled-components"
+import Home from './Home'
+import Carrinho from './Carrinho'
 
 const MainContainer = styled.div`
   border: 1px solid black;
@@ -15,6 +17,7 @@ const Cabecalho = styled.div`
 
 
 export default class Header extends React.Component {
+
   render() {
 
     return (
@@ -23,8 +26,8 @@ export default class Header extends React.Component {
             Nome do Projeto
           </Cabecalho>
           <Cabecalho>
-            <button>Home</button>
-            <button>Carrinho</button>
+            <button onClick={this.props.irParaHome}>Home</button>
+            <button onClick={this.props.irParaCarrinho}>Carrinho</button>
           </Cabecalho>
         </MainContainer>
     )

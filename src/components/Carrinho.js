@@ -1,14 +1,28 @@
 import React from 'react'
 import axios from 'axios'
 import styled from "styled-components"
-import Header from './Header'
+import Home from './Home'
+import Carrinho from './Carrinho'
 
-export default class Carrinho extends React.Component {
+const MainContainer = styled.div`
+  border: 1px solid black;
+  background-color: lightseagreen;
+  display: flex;
+  justify-content: space-between;
+`
+
+const Cabecalho = styled.div`
+  padding: 25px;
+`
+
+
+export default class Header extends React.Component {
+
   render() {
 
     return (
         <div>
-            {/* <Header/> */}
+          Carrinho
         </div>
     )
 
